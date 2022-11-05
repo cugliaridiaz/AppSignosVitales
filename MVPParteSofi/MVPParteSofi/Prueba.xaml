@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MVPParteSofi.Prueba"
+             Title="Prueba"
+             NavigationPage.HasNavigationBar="False">
+    <VerticalStackLayout>
+        <Label 
+            Text="Welcome to .NET MAUI!"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        <Label
+            Text="mandé todos los botones a esta página y me olvidé de que no se puede volver atrás xdxd"
+            TextColor="Gray"></Label>
+        <Label
+            Text="Vas a ver que casi todos los botones están separados de los textos o fotos, porque la foto que teníamos es un bardo de usar, así q puse las cosas en segundo plano y un botón transparente arriba, capaz vas a tener que hacer lo mismo"></Label>
+        <Label
+            Text="otro tip: si queres separar los objetos y estás es Stack, crea un Frame y hacelo transparente, en la página de editar perfil lo hice así"
+            TextColor="HotPink"></Label>
+        <Button
+            Text="Volver Inicio"
+            BackgroundColor="DarkCyan"
+            Clicked="prueba1"></Button>
+        <Button
+            Text="Volver Historial"
+            BackgroundColor="DarkGoldenrod"
+            Clicked="prueba2"></Button>
+        <Button
+            Text="Volver Perfil"
+            Clicked="prueba3"></Button>
+    </VerticalStackLayout>
+</ContentPage>

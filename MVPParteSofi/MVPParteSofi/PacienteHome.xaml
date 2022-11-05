@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            x:Class="MVPParteSofi.PacienteHome"
+            xmlns:local="clr-namespace:MVPParteSofi" 
+            Title="PacienteHome"
+            BarBackgroundColor="Navy"
+            BarTextColor="White"
+            SelectedTabColor="AliceBlue"
+            UnselectedTabColor="Gray"
+            xmlns:android="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.AndroidSpecific;assembly=Microsoft.Maui.Controls"
+            android:TabbedPage.ToolbarPlacement="Bottom">
+    <!--xmlns:local="clr-namespace:MVPParteSofi" necesario para poder ensamblar-->
+    
+    <NavigationPage Title="Inicio" IconImageSource="iconhome.png">
+        <x:Arguments>
+            <local:PacienteInicio></local:PacienteInicio>
+        </x:Arguments>
+    </NavigationPage>
+    
+    <NavigationPage Title="Historial" IconImageSource="iconhistorial.png">
+        <x:Arguments>
+            <local:PacienteHistorial></local:PacienteHistorial>
+        </x:Arguments>
+    </NavigationPage>
+    
+    <NavigationPage Title="Perfil" IconImageSource="iconprofile.png">
+        <x:Arguments>
+            <local:PacientePerfil></local:PacientePerfil>
+        </x:Arguments>
+    </NavigationPage>
+
+</TabbedPage>

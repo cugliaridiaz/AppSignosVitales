@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MVPParteSofi.PacientePerfil"
+             Title="PacientePerfil"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="AliceBlue">
+    <VerticalStackLayout Spacing="5">
+        <Frame HeightRequest="60"
+               BorderColor="Transparent"
+               BackgroundColor="Transparent">
+        </Frame>
+        <Frame
+            HeightRequest="110"
+            WidthRequest="110"
+            CornerRadius="55"
+            BorderColor="Transparent">
+            <Image Source="dotnet_bot">
+            </Image>
+        </Frame>
+        <Label
+            Text="Sofía Diaz"
+            FontSize="Title"
+            FontAttributes="Bold"
+            HorizontalOptions="Center"></Label>
+        <Frame
+            HeightRequest="40"
+            BackgroundColor="Transparent"
+            BorderColor="Transparent"></Frame>
+        <Button
+            Text="Editar perfil"
+            TextColor="Black"
+            CornerRadius="15"
+            HeightRequest="45"
+            HorizontalOptions="Center"
+            WidthRequest="250"
+            BackgroundColor="White"
+            Clicked="editar_perfil"></Button>
+        <Button
+            Text="Preguntas frecuentes"
+            TextColor="Black"
+            CornerRadius="15"
+            HeightRequest="45"
+            HorizontalOptions="Center"
+            WidthRequest="250"
+            BackgroundColor="White"
+            Clicked="FAQs"></Button>
+        <Frame HeightRequest="40"
+               BackgroundColor="Transparent"
+               BorderColor="Transparent"></Frame>
+        <Button
+            Text="Cerrar Sesión"
+            TextColor="White"
+            CornerRadius="15"
+            HeightRequest="45"
+            HorizontalOptions="Center"
+            WidthRequest="250"
+            BackgroundColor="MidnightBlue"
+            Clicked="cerrar_sesion"></Button>
+        
+    </VerticalStackLayout>
+</ContentPage>

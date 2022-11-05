@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MVPParteSofi.CargarFrecuencia"
+             NavigationPage.HasNavigationBar="False">
+    
+    <ScrollView>
+        <StackLayout>
+            <VerticalStackLayout
+                Margin="10"></VerticalStackLayout>
+            <HorizontalStackLayout>
+                <Frame BackgroundColor="Transparent" 
+                   HeightRequest="70"
+                   WidthRequest="70"
+                   BorderColor="White"
+                   CornerRadius="85"
+                   IsClippedToBounds="True"
+                   HorizontalOptions="Start"
+                   TranslationX="20"
+                   VerticalOptions="Start"
+                   TranslationY="10"
+                   Margin="7,5,0,0">
+                    <Image
+                        Source="frecuencia.png"
+                        HeightRequest="200"
+                        WidthRequest="200"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        BackgroundColor="Transparent"
+                        >
+                    </Image>
+
+
+                </Frame>
+                <Label Text="Frecuencia Cardíaca"
+                   FontSize="17"
+                   VerticalOptions="Start"
+                   VerticalTextAlignment="Center"
+                   HorizontalOptions="Start"
+                   HeightRequest="50"
+                   Margin="20,25,20,20"
+                   BackgroundColor="Transparent" 
+                   FontAttributes="Bold"/>
+            </HorizontalStackLayout>
+
+            <AbsoluteLayout>
+                <Frame  BorderColor="Blue"
+                   AbsoluteLayout.LayoutBounds="0,.6,1,0"
+                   AbsoluteLayout.LayoutFlags="All"
+                   HeightRequest="75"
+                    CornerRadius="25"
+                    Margin="20, 40, 20, 20">
+                    <Entry
+                    Placeholder="INGRESE SU VALOR"
+                    Keyboard="Numeric"
+                    TextColor="Blue"
+                    FontSize="13"
+                    HeightRequest="50"
+                    />
+                </Frame>
+                <Frame
+                    AbsoluteLayout.LayoutBounds=".9,1,70,50"
+                    AbsoluteLayout.LayoutFlags="PositionProportional"
+                    BackgroundColor="Lavender"
+                    BorderColor="Transparent"
+                    TranslationY="15"
+                    ></Frame>
+                <Label
+                    AbsoluteLayout.LayoutBounds=".9,.5,70,50"
+                    AbsoluteLayout.LayoutFlags="PositionProportional"
+                    BackgroundColor="Transparent"
+                    Text="latidos/min"
+                    HorizontalTextAlignment="Center"
+                    VerticalTextAlignment="Center"
+                    TranslationY="15"
+                    FontSize="12"
+                    >
+                </Label>
+                <!--
+                Si tiene más de una unidad:
+                
+                <Picker Title="unidad">
+                    <Picker.Items>
+                        <x:String>Baboon</x:String>
+                        <x:String>Capuchin Monkey</x:String>
+                        <x:String>Blue Monkey</x:String>
+                        <x:String>Squirrel Monkey</x:String>
+                        <x:String>Golden Lion Tamarin</x:String>
+                        <x:String>Howler Monkey</x:String>
+                        <x:String>Japanese Macaque</x:String>
+                    </Picker.Items>
+                </Picker>-->
+            </AbsoluteLayout>
+            <AbsoluteLayout
+                Margin="20,40,20,5">
+                <Frame
+                    AbsoluteLayout.LayoutBounds=".25,1,100,40"
+                    AbsoluteLayout.LayoutFlags="PositionProportional"
+                    BackgroundColor="AliceBlue"
+                    BorderColor="AliceBlue"
+                    ></Frame>
+                <Frame
+                    AbsoluteLayout.LayoutBounds=".75,1,100,40"
+                    AbsoluteLayout.LayoutFlags="PositionProportional"
+                    BackgroundColor="AliceBlue"
+                    BorderColor="AliceBlue"
+                    ></Frame>
+                <DatePicker AbsoluteLayout.LayoutBounds=".3,1,90,40"
+                            AbsoluteLayout.LayoutFlags="PositionProportional"
+                            TranslationX="-10"
+                            BackgroundColor="Transparent"
+                            TextColor="Black"
+                            FontSize="Header"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"/>
+                <TimePicker HorizontalOptions="Center"
+                            VerticalOptions="Center"
+                            AbsoluteLayout.LayoutBounds=".73,1,80,40"
+                            AbsoluteLayout.LayoutFlags="PositionProportional"
+                            BackgroundColor="Transparent"
+                            TextColor="Black"
+                            />
+            </AbsoluteLayout>
+            <VerticalStackLayout>
+                <Button
+                    Text="GUARDAR"
+                    TextColor="White"
+                    Margin="10"
+                    CornerRadius="25"
+                    WidthRequest="150"
+                    Clicked="Clickedbuttonguardarfrecuencia"
+                    FontSize="Header"/>
+                <Frame
+                    HeightRequest="80"
+                    BorderColor="Transparent"
+                    BackgroundColor="Transparent"></Frame>
+                <Label
+                    Text=" OPCIONES:"
+                    TextColor="DarkGray"
+                    FontSize="13"
+                    VerticalOptions="End"
+                    HorizontalOptions="Start"
+                    Margin="15,0,3,3"
+                    />
+                <Line 
+                    X1="20"
+                    Y1="0"
+                    X2="600"
+                    Y2="0"
+                    Stroke="lightgray"/>
+
+                <AbsoluteLayout>
+
+                    <Label 
+                    Text="Tutorial de medición"
+                    BackgroundColor="Transparent"
+                    AbsoluteLayout.LayoutBounds="0,0,1,60"
+                    AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"
+                    HorizontalTextAlignment="Center"
+                    VerticalTextAlignment="Center"
+                    FontSize="Header"
+                    TextColor="Black"
+                    ></Label>
+                    <Button
+                    BackgroundColor="Transparent"
+                    BorderColor="Transparent"
+                    Clicked="Clickbotontutorialfrecuencia"
+                    AbsoluteLayout.LayoutBounds="0,0,1,60"
+                    AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"
+                        />
+                </AbsoluteLayout>
+                <Line 
+                    X1="50"
+                    Y1="0"
+                    X2="600"
+                    Y2="0"
+                    Stroke="lightgray"
+                    />
+                <AbsoluteLayout>
+
+                    <Label 
+                    Text="Historial de mediciones"
+                    BackgroundColor="Transparent"
+                    AbsoluteLayout.LayoutBounds="0,0,1,60"
+                    AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"
+                    HorizontalTextAlignment="Center"
+                    VerticalTextAlignment="Center"
+                    FontSize="Header"
+                    TextColor="Black"
+                    ></Label>
+                    <Button
+                    BackgroundColor="Transparent"
+                    BorderColor="Transparent"
+                    Clicked="ClickHistorialFrecuencia"
+                    AbsoluteLayout.LayoutBounds="0,0,1,60"
+                    AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"
+                        />
+                </AbsoluteLayout>
+                <Line 
+                    X1="50"
+                    Y1="0"
+                    X2="600"
+                    Y2="0"
+                    Stroke="lightgray"
+                    />
+                <AbsoluteLayout>
+                    <Label 
+                    Text="Configuración de notificaciones"
+                    BackgroundColor="Transparent"
+                    AbsoluteLayout.LayoutBounds="0,0,1,60"
+                    AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"
+                    HorizontalTextAlignment="Center"
+                    VerticalTextAlignment="Center"
+                    FontSize="Header"
+                    TextColor="Black"
+                    ></Label>
+                    <Button
+                    BackgroundColor="Transparent"
+                    BorderColor="Transparent"
+                    Clicked="ClickAlarmaFrecuencia"
+                    AbsoluteLayout.LayoutBounds="0,0,1,60"
+                    AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"
+                        />
+                </AbsoluteLayout>
+                <Line 
+                    X1="50"
+                    Y1="0"
+                    X2="600"
+                    Y2="0"
+                    Stroke="lightgray"
+                    />
+                <AbsoluteLayout>
+
+                    <Label 
+                    Text="Conectar con dispositivos Bluetooth"
+                    BackgroundColor="Transparent"
+                    AbsoluteLayout.LayoutBounds="0,0,1,60"
+                    AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"
+                    HorizontalTextAlignment="Center"
+                    VerticalTextAlignment="Center"
+                    FontSize="Header"
+                    TextColor="Blue"
+                    ></Label>
+                    <Button
+                    BackgroundColor="Transparent"
+                    BorderColor="Transparent"
+                    Clicked="Clickbotontutorialfrecuencia"
+                    AbsoluteLayout.LayoutBounds="0,0,1,60"
+                    AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"
+                        />
+                </AbsoluteLayout>
+                <Line 
+                    X1="20"
+                    Y1="0"
+                    X2="600"
+                    Y2="0"
+                    Stroke="lightgray"
+                    />
+                <Button
+                    Text="Volver"
+                    TextColor="DarkBlue"
+                    BackgroundColor="White"
+                    Margin="10"
+                    FontSize="13"
+                    HorizontalOptions="Start"
+                    Clicked="Volveriniciopaciente"/>
+            </VerticalStackLayout>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

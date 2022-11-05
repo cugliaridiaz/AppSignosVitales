@@ -1,0 +1,88 @@
+is_global = true
+build_property.TargetFramework = net6.0-ios
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = MVPParteSofi
+build_property.ProjectDir = C:\Users\usuario-pc\Desktop\MVPParteSofi-20221031T235942Z-001\MVPParteSofi\MVPParteSofi\
+
+[C:/Users/usuario-pc/Desktop/MVPParteSofi-20221031T235942Z-001/MVPParteSofi/MVPParteSofi/App.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MVPParteSofi.App.xaml
+build_metadata.AdditionalFiles.TargetPath = App.xaml
+build_metadata.AdditionalFiles.RelativePath = App.xaml
+
+[C:/Users/usuario-pc/Desktop/MVPParteSofi-20221031T235942Z-001/MVPParteSofi/MVPParteSofi/AppShell.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MVPParteSofi.AppShell.xaml
+build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
+build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
+
+[C:/Users/usuario-pc/Desktop/MVPParteSofi-20221031T235942Z-001/MVPParteSofi/MVPParteSofi/MainPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MVPParteSofi.MainPage.xaml
+build_metadata.AdditionalFiles.TargetPath = MainPage.xaml
+build_metadata.AdditionalFiles.RelativePath = MainPage.xaml
+
+[C:/Users/usuario-pc/Desktop/MVPParteSofi-20221031T235942Z-001/MVPParteSofi/MVPParteSofi/MVVM/View/CargarFrecuencia.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MVPParteSofi.MVVM.View.CargarFrecuencia.xaml
+build_metadata.AdditionalFiles.TargetPath = MVVM\View\CargarFrecuencia.xaml
+build_metadata.AdditionalFiles.RelativePath = MVVM\View\CargarFrecuencia.xaml
+
+[C:/Users/usuario-pc/Desktop/MVPParteSofi-20221031T235942Z-001/MVPParteSofi/MVPParteSofi/MVVM/View/HistorialFrecuencia.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MVPParteSofi.MVVM.View.HistorialFrecuencia.xaml
+build_metadata.AdditionalFiles.TargetPath = MVVM\View\HistorialFrecuencia.xaml
+build_metadata.AdditionalFiles.RelativePath = MVVM\View\HistorialFrecuencia.xaml
+
+[C:/Users/usuario-pc/Desktop/MVPParteSofi-20221031T235942Z-001/MVPParteSofi/MVPParteSofi/PacienteHistorial.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MVPParteSofi.PacienteHistorial.xaml
+build_metadata.AdditionalFiles.TargetPath = PacienteHistorial.xaml
+build_metadata.AdditionalFiles.RelativePath = PacienteHistorial.xaml
+
+[C:/Users/usuario-pc/Desktop/MVPParteSofi-20221031T235942Z-001/MVPParteSofi/MVPParteSofi/PacienteHome.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MVPParteSofi.PacienteHome.xaml
+build_metadata.AdditionalFiles.TargetPath = PacienteHome.xaml
+build_metadata.AdditionalFiles.RelativePath = PacienteHome.xaml
+
+[C:/Users/usuario-pc/Desktop/MVPParteSofi-20221031T235942Z-001/MVPParteSofi/MVPParteSofi/PacienteInicio.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MVPParteSofi.PacienteInicio.xaml
+build_metadata.AdditionalFiles.TargetPath = PacienteInicio.xaml
+build_metadata.AdditionalFiles.RelativePath = PacienteInicio.xaml
+
+[C:/Users/usuario-pc/Desktop/MVPParteSofi-20221031T235942Z-001/MVPParteSofi/MVPParteSofi/PacientePerfil.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MVPParteSofi.PacientePerfil.xaml
+build_metadata.AdditionalFiles.TargetPath = PacientePerfil.xaml
+build_metadata.AdditionalFiles.RelativePath = PacientePerfil.xaml
+
+[C:/Users/usuario-pc/Desktop/MVPParteSofi-20221031T235942Z-001/MVPParteSofi/MVPParteSofi/ProfHome.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MVPParteSofi.ProfHome.xaml
+build_metadata.AdditionalFiles.TargetPath = ProfHome.xaml
+build_metadata.AdditionalFiles.RelativePath = ProfHome.xaml
+
+[C:/Users/usuario-pc/Desktop/MVPParteSofi-20221031T235942Z-001/MVPParteSofi/MVPParteSofi/Prueba.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MVPParteSofi.Prueba.xaml
+build_metadata.AdditionalFiles.TargetPath = Prueba.xaml
+build_metadata.AdditionalFiles.RelativePath = Prueba.xaml
+
+[C:/Users/usuario-pc/Desktop/MVPParteSofi-20221031T235942Z-001/MVPParteSofi/MVPParteSofi/Resources/Styles/Colors.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MVPParteSofi.Resources.Styles.Colors.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Colors.xaml
+
+[C:/Users/usuario-pc/Desktop/MVPParteSofi-20221031T235942Z-001/MVPParteSofi/MVPParteSofi/Resources/Styles/Styles.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MVPParteSofi.Resources.Styles.Styles.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml
