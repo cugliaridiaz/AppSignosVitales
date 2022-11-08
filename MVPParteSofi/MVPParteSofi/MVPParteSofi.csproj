@@ -61,7 +61,11 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <PackageReference Include="PropertyChanged.Fody" Version="4.1.0" />
 	  <PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
+	  <PackageReference Include="SQLiteNetExtensions" Version="2.1.0" />
+	  <PackageReference Include="SQLitePCLRaw.provider.dynamic_cdecl" Version="2.1.2" />
+	  <PackageReference Include="Syncfusion.Maui.Charts" Version="20.3.52" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -88,9 +92,6 @@
 	  </MauiXaml>
 	</ItemGroup>
 
-	<ItemGroup>
-	  <Folder Include="MVVM\Models\" />
-	  <Folder Include="MVVM\ViewModels\" />
-	</ItemGroup>
+	<ProjectExtensions><VisualStudio><UserProperties XamarinHotReloadDebuggerTimeoutExceptionMVPParteSofiHideInfoBar="True" /></VisualStudio></ProjectExtensions>
 
 </Project>

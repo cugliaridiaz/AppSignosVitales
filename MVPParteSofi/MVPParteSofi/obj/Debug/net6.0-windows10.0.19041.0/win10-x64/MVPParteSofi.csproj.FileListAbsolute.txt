@@ -720,3 +720,8 @@ C:\Users\usuario-pc\Desktop\MVPParteSofi-20221031T235942Z-001\MVPParteSofi\MVPPa
 C:\Users\usuario-pc\Desktop\MVPParteSofi-20221031T235942Z-001\MVPParteSofi\MVPParteSofi\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\qualifiers.txt.intermediate
 C:\Users\usuario-pc\Desktop\MVPParteSofi-20221031T235942Z-001\MVPParteSofi\MVPParteSofi\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\MultipleQualifiersPerDimensionFound.txt
 C:\Users\usuario-pc\Desktop\MVPParteSofi-20221031T235942Z-001\MVPParteSofi\MVPParteSofi\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\ProjectArchitectures.txt
+C:\Users\usuario-pc\Desktop\MVPParteSofi-20221031T235942Z-001\MVPParteSofi\MVPParteSofi\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\Newtonsoft.Json.dll
+C:\Users\usuario-pc\Desktop\MVPParteSofi-20221031T235942Z-001\MVPParteSofi\MVPParteSofi\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\SQLiteNetExtensions.dll
+C:\Users\usuario-pc\Desktop\MVPParteSofi-20221031T235942Z-001\MVPParteSofi\MVPParteSofi\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\Syncfusion.Licensing.dll
+C:\Users\usuario-pc\Desktop\MVPParteSofi-20221031T235942Z-001\MVPParteSofi\MVPParteSofi\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\Syncfusion.Maui.Charts.dll
+C:\Users\usuario-pc\Desktop\MVPParteSofi-20221031T235942Z-001\MVPParteSofi\MVPParteSofi\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\Syncfusion.Maui.Core.dll

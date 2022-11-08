@@ -1,4 +1,6 @@
+using MVPParteSofi.MVVM.Models;
 using MVPParteSofi.MVVM.View;
+using MVPParteSofi.MVVM.ViewModels;
 
 namespace MVPParteSofi;
 
@@ -7,29 +9,24 @@ public partial class CargarFrecuencia : ContentPage
 	public CargarFrecuencia()
 	{
 		InitializeComponent();
+        BindingContext = new CargarFrecuenciaViewModel();
 	}
-	private void Clickedbuttonguardarfrecuencia (object sender, EventArgs e)
+	private async void ClickGuardarFrecuencia (object sender, EventArgs e)
 	{
-		DisplayAlert("Es correcto el valor:", "Entry", "Si", "No");
+        var currentVM =
+            (CargarFrecuenciaViewModel)BindingContext;
+        var message =
+            currentVM.GuardarFrecuencia();
+        var Entry =
+            currentVM.FrecuenciaData.ValorFrecuencia;
+        await DisplayAlert("Su valor ha sido registrado", "{Entry} latidos/min.", "Aceptar", "Volver");
 	}
-	private void Volveriniciopaciente (object sender, EventArgs e)
-	{
-		Navigation.PopAsync();
-	}
-    private void Clickbluetooth(object sender, EventArgs e)
+	  private async void FrecuenciaPrueba (object sender, EventArgs e)
     {
-		Navigation.PushAsync(new Prueba());
+        await Navigation.PushAsync(new Prueba());
     }
-    private void ClickHistorialFrecuencia(object sender, EventArgs e)
+      private async void HistorialFrecuencia(object sender, EventArgs e)
     {
-        Navigation.PushAsync(new HistorialFrecuencia());
-    }
-    private void Clickbotontutorialfrecuencia(object sender, EventArgs e)
-    {
-        Navigation.PushAsync(new Prueba());
-    }
-    private void ClickAlarmaFrecuencia(object sender, EventArgs e)
-    {
-        Navigation.PushAsync(new Prueba());
+        await Navigation.PushAsync(new HistorialFrecuencia());
     }
 }

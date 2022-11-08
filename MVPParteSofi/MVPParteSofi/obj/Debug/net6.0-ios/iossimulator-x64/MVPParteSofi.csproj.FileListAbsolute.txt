@@ -553,3 +553,8 @@ C:\Users\usuario-pc\Desktop\MVPParteSofi-20221031T235942Z-001\MVPParteSofi\MVPPa
 C:\Users\usuario-pc\Desktop\MVPParteSofi-20221031T235942Z-001\MVPParteSofi\MVPParteSofi\obj\Debug\net6.0-ios\iossimulator-x64\MVPParteSofi.pdb
 C:\Users\usuario-pc\Desktop\MVPParteSofi-20221031T235942Z-001\MVPParteSofi\MVPParteSofi\obj\Debug\net6.0-ios\iossimulator-x64\MVPParteSofi.genruntimeconfig.cache
 C:\Users\usuario-pc\Desktop\MVPParteSofi-20221031T235942Z-001\MVPParteSofi\MVPParteSofi\obj\Debug\net6.0-ios\iossimulator-x64\ref\MVPParteSofi.dll
+C:\Users\usuario-pc\Desktop\MVPParteSofi-20221031T235942Z-001\MVPParteSofi\MVPParteSofi\bin\Debug\net6.0-ios\iossimulator-x64\Newtonsoft.Json.dll
+C:\Users\usuario-pc\Desktop\MVPParteSofi-20221031T235942Z-001\MVPParteSofi\MVPParteSofi\bin\Debug\net6.0-ios\iossimulator-x64\SQLiteNetExtensions.dll
+C:\Users\usuario-pc\Desktop\MVPParteSofi-20221031T235942Z-001\MVPParteSofi\MVPParteSofi\bin\Debug\net6.0-ios\iossimulator-x64\Syncfusion.Licensing.dll
+C:\Users\usuario-pc\Desktop\MVPParteSofi-20221031T235942Z-001\MVPParteSofi\MVPParteSofi\bin\Debug\net6.0-ios\iossimulator-x64\Syncfusion.Maui.Charts.dll
+C:\Users\usuario-pc\Desktop\MVPParteSofi-20221031T235942Z-001\MVPParteSofi\MVPParteSofi\bin\Debug\net6.0-ios\iossimulator-x64\Syncfusion.Maui.Core.dll

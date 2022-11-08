@@ -6,20 +6,22 @@
     
     <ScrollView>
         <StackLayout>
-            <VerticalStackLayout
-                Margin="10"></VerticalStackLayout>
-            <HorizontalStackLayout>
+            <!-- Espacio principio -->
+            <Frame HeightRequest="55"
+                   BorderColor="Transparent"></Frame>
+            <AbsoluteLayout
+                BackgroundColor="Transparent">
+                <!-- ícono -->
                 <Frame BackgroundColor="Transparent" 
                    HeightRequest="70"
                    WidthRequest="70"
                    BorderColor="White"
                    CornerRadius="85"
                    IsClippedToBounds="True"
-                   HorizontalOptions="Start"
-                   TranslationX="20"
+                   HorizontalOptions="CenterAndExpand"
                    VerticalOptions="Start"
-                   TranslationY="10"
-                   Margin="7,5,0,0">
+                   AbsoluteLayout.LayoutBounds=".15,.8,70,70"
+                   AbsoluteLayout.LayoutFlags="PositionProportional">
                     <Image
                         Source="frecuencia.png"
                         HeightRequest="200"
@@ -29,68 +31,64 @@
                         BackgroundColor="Transparent"
                         >
                     </Image>
-
-
                 </Frame>
+                <!-- título -->
                 <Label Text="Frecuencia Cardíaca"
-                   FontSize="17"
+                   FontSize="20"
                    VerticalOptions="Start"
                    VerticalTextAlignment="Center"
-                   HorizontalOptions="Start"
-                   HeightRequest="50"
-                   Margin="20,25,20,20"
+                   HorizontalTextAlignment="Center"
+                   AbsoluteLayout.LayoutBounds=".6,1,.6,50"
+                   AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"
                    BackgroundColor="Transparent" 
                    FontAttributes="Bold"/>
-            </HorizontalStackLayout>
-
+            </AbsoluteLayout>
+            <Frame HeightRequest="30"
+                   BorderColor="Transparent"
+                   BackgroundColor="Transparent"></Frame>
             <AbsoluteLayout>
-                <Frame  BorderColor="Blue"
+                <!-- Entry -->
+                <Frame  BorderColor="CornflowerBlue"
                    AbsoluteLayout.LayoutBounds="0,.6,1,0"
                    AbsoluteLayout.LayoutFlags="All"
-                   HeightRequest="75"
+                   HeightRequest="65"
                     CornerRadius="25"
-                    Margin="20, 40, 20, 20">
+                    Margin="20, 40, 20, 20"
+                        BackgroundColor="GhostWhite">
                     <Entry
                     Placeholder="INGRESE SU VALOR"
                     Keyboard="Numeric"
                     TextColor="Blue"
                     FontSize="13"
                     HeightRequest="50"
+                    Text="{Binding FrecuenciaData.ValorFrecuencia}"
                     />
                 </Frame>
                 <Frame
-                    AbsoluteLayout.LayoutBounds=".9,1,70,50"
+                    TranslationY="15"
+                    AbsoluteLayout.LayoutBounds=".9,1,90,50"
                     AbsoluteLayout.LayoutFlags="PositionProportional"
                     BackgroundColor="Lavender"
                     BorderColor="Transparent"
-                    TranslationY="15"
                     ></Frame>
-                <Label
-                    AbsoluteLayout.LayoutBounds=".9,.5,70,50"
-                    AbsoluteLayout.LayoutFlags="PositionProportional"
-                    BackgroundColor="Transparent"
-                    Text="latidos/min"
-                    HorizontalTextAlignment="Center"
-                    VerticalTextAlignment="Center"
-                    TranslationY="15"
-                    FontSize="12"
-                    >
-                </Label>
-                <!--
-                Si tiene más de una unidad:
-                
-                <Picker Title="unidad">
+                <!--picker unidad-->
+                <Picker Title="Elegir unidad"
+                        AbsoluteLayout.LayoutBounds=".9,.5,90,50"
+                        AbsoluteLayout.LayoutFlags="PositionProportional"
+                        BackgroundColor="Transparent"
+                        HorizontalTextAlignment="Center"
+                        VerticalTextAlignment="Center"
+                        TranslationY="19"
+                        FontSize="14"
+                        TextColor="Black">
                     <Picker.Items>
-                        <x:String>Baboon</x:String>
-                        <x:String>Capuchin Monkey</x:String>
-                        <x:String>Blue Monkey</x:String>
-                        <x:String>Squirrel Monkey</x:String>
-                        <x:String>Golden Lion Tamarin</x:String>
-                        <x:String>Howler Monkey</x:String>
-                        <x:String>Japanese Macaque</x:String>
+                        <x:String>latidos/min</x:String>
+                        <x:String>Unidad 2</x:String>
+                        <x:String>Unidad 3</x:String>
                     </Picker.Items>
-                </Picker>-->
+                </Picker>
             </AbsoluteLayout>
+            <!--day y time pickers-->
             <AbsoluteLayout
                 Margin="20,40,20,5">
                 <Frame
@@ -112,7 +110,8 @@
                             TextColor="Black"
                             FontSize="Header"
                             HorizontalOptions="Center"
-                            VerticalOptions="Center"/>
+                            VerticalOptions="Center"
+                            Date="{Binding FrecuenciaData.DiaFrecuencia}"/>
                 <TimePicker HorizontalOptions="Center"
                             VerticalOptions="Center"
                             AbsoluteLayout.LayoutBounds=".73,1,80,40"
@@ -121,19 +120,23 @@
                             TextColor="Black"
                             />
             </AbsoluteLayout>
+            <!-- GUARDAR -->
             <VerticalStackLayout>
-                <Button
+                <Button x:Name="GuardarFrecuencia"
                     Text="GUARDAR"
                     TextColor="White"
                     Margin="10"
                     CornerRadius="25"
                     WidthRequest="150"
-                    Clicked="Clickedbuttonguardarfrecuencia"
-                    FontSize="Header"/>
+                        HeightRequest="50"
+                    Clicked="ClickGuardarFrecuencia"
+                    FontSize="Header"
+                    BackgroundColor="CornflowerBlue"/>
                 <Frame
                     HeightRequest="80"
                     BorderColor="Transparent"
                     BackgroundColor="Transparent"></Frame>
+                <!-- OPCIONES: -->
                 <Label
                     Text=" OPCIONES:"
                     TextColor="DarkGray"
@@ -148,7 +151,7 @@
                     X2="600"
                     Y2="0"
                     Stroke="lightgray"/>
-
+                <!-- Tutorial -->
                 <AbsoluteLayout>
 
                     <Label 
@@ -158,13 +161,13 @@
                     AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"
                     HorizontalTextAlignment="Center"
                     VerticalTextAlignment="Center"
-                    FontSize="Header"
+                    FontSize="15"
                     TextColor="Black"
                     ></Label>
                     <Button
                     BackgroundColor="Transparent"
                     BorderColor="Transparent"
-                    Clicked="Clickbotontutorialfrecuencia"
+                    Clicked="FrecuenciaPrueba"
                     AbsoluteLayout.LayoutBounds="0,0,1,60"
                     AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"
                         />
@@ -177,7 +180,7 @@
                     Stroke="lightgray"
                     />
                 <AbsoluteLayout>
-
+                    <!-- Historial -->
                     <Label 
                     Text="Historial de mediciones"
                     BackgroundColor="Transparent"
@@ -185,13 +188,13 @@
                     AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"
                     HorizontalTextAlignment="Center"
                     VerticalTextAlignment="Center"
-                    FontSize="Header"
+                    FontSize="15"
                     TextColor="Black"
                     ></Label>
                     <Button
                     BackgroundColor="Transparent"
                     BorderColor="Transparent"
-                    Clicked="ClickHistorialFrecuencia"
+                    Clicked="HistorialFrecuencia"
                     AbsoluteLayout.LayoutBounds="0,0,1,60"
                     AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"
                         />
@@ -203,6 +206,7 @@
                     Y2="0"
                     Stroke="lightgray"
                     />
+                <!-- Notificaciones -->
                 <AbsoluteLayout>
                     <Label 
                     Text="Configuración de notificaciones"
@@ -211,13 +215,13 @@
                     AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"
                     HorizontalTextAlignment="Center"
                     VerticalTextAlignment="Center"
-                    FontSize="Header"
+                    FontSize="15"
                     TextColor="Black"
                     ></Label>
                     <Button
                     BackgroundColor="Transparent"
                     BorderColor="Transparent"
-                    Clicked="ClickAlarmaFrecuencia"
+                    Clicked="FrecuenciaPrueba"
                     AbsoluteLayout.LayoutBounds="0,0,1,60"
                     AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"
                         />
@@ -230,7 +234,7 @@
                     Stroke="lightgray"
                     />
                 <AbsoluteLayout>
-
+                    <!-- Bluetooth -->
                     <Label 
                     Text="Conectar con dispositivos Bluetooth"
                     BackgroundColor="Transparent"
@@ -238,13 +242,13 @@
                     AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"
                     HorizontalTextAlignment="Center"
                     VerticalTextAlignment="Center"
-                    FontSize="Header"
-                    TextColor="Blue"
+                    FontSize="15"
+                    TextColor="CornflowerBlue"
                     ></Label>
                     <Button
                     BackgroundColor="Transparent"
                     BorderColor="Transparent"
-                    Clicked="Clickbotontutorialfrecuencia"
+                    Clicked="FrecuenciaPrueba"
                     AbsoluteLayout.LayoutBounds="0,0,1,60"
                     AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"
                         />
@@ -256,14 +260,15 @@
                     Y2="0"
                     Stroke="lightgray"
                     />
+                <!-- Volver -->
                 <Button
                     Text="Volver"
                     TextColor="DarkBlue"
                     BackgroundColor="White"
                     Margin="10"
-                    FontSize="13"
+                    FontSize="15"
                     HorizontalOptions="Start"
-                    Clicked="Volveriniciopaciente"/>
+                    Clicked="FrecuenciaPrueba"/>
             </VerticalStackLayout>
         </StackLayout>
     </ScrollView>

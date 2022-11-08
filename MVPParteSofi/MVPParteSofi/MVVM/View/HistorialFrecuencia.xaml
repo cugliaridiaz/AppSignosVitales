@@ -3,34 +3,85 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MVPParteSofi.MVVM.View.HistorialFrecuencia"
              Title="HistorialFrecuencia"
+             xmlns:chart="clr-namespace:Syncfusion.Maui.Charts;assembly=Syncfusion.Maui.Charts"
              NavigationPage.HasNavigationBar="False">
-    
-    <!--Proximamente sólo en cines...-->
+
+    <!--Agg gráficos a la página: xmlns:chart="clr-namespace:Syncfusion.Maui.Charts;assembly=Syncfusion.Maui.Charts"-->
     
     <Grid RowDefinitions=".7*,.5*"
-          Margin="10">
-            <Grid
+          Margin="10"
+          BackgroundColor="AliceBlue">
+        <!--chart-->
+        <Grid Grid.Row="0"
+              RowDefinitions=".15*,.85*" >
+            <VerticalStackLayout Grid.Row="0">
+                <Label Text="Historial de Frecuencia Cardíaca"
+                       FontSize="20"
+                       HorizontalTextAlignment="Center"
+                       Margin="0,20,0,0"></Label>
+            </VerticalStackLayout>
+            <Frame BackgroundColor="White" Grid.Row="1" CornerRadius="15" >
+                <chart:SfCartesianChart Margin="5,0,15,5">
+                <chart:SfCartesianChart.XAxes>
+                    <chart:CategoryAxis />
+                </chart:SfCartesianChart.XAxes>
+
+                <chart:SfCartesianChart.YAxes>
+                    <chart:NumericalAxis />
+                </chart:SfCartesianChart.YAxes>
+
+                <chart:SplineSeries ItemsSource="{Binding Summary}" 
+                                    XBindingPath="ShownDate" 
+                                    YBindingPath="ValorFrecuencia"/>
+            </chart:SfCartesianChart>
+            </Frame>
+        </Grid>
+        <!--filtro y datos-->
+        <Grid
                 Grid.Row ="1"
-                RowDefinitions=".1*,.9*">
-                <VerticalStackLayout
-                    Grid.Row="0">
+                RowDefinitions=".3*,.9*"
+                BackgroundColor="AntiqueWhite">
+            <VerticalStackLayout
+                    Grid.Row="0"
+                    BackgroundColor="Transparent">
                     <Label Text="Filtrar resultados"
+                           FontSize="15"
                            Margin="10,0,0,0"></Label>
                 <HorizontalStackLayout
-                        HorizontalOptions="CenterAndExpand">
+                        HorizontalOptions="CenterAndExpand"
+                        Grid.Row="0">
                     <DatePicker FontSize="17"
                                 Margin="10"
                                 BackgroundColor="White">
                     </DatePicker>
                     <TimePicker FontSize="17"
                                 Margin="10">
-
                     </TimePicker>
                 </HorizontalStackLayout>
 
                 </VerticalStackLayout>
                 <CollectionView Grid.Row="1"
-                                EmptyView="No se encontraron datos"></CollectionView>
+                                EmptyView="No se encontraron datos"
+                                BackgroundColor="LightGrey"
+                                ItemsSource="{Binding ValorFrecuencia}">
+                    
+                    <CollectionView.ItemsLayout>
+                        <LinearItemsLayout ItemSpacing="15"
+                                           Orientation="Vertical"></LinearItemsLayout>
+                    </CollectionView.ItemsLayout>
+                
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid ColumnDefinitions="*,*,*">
+                            <Label Text="Día" Grid.Column="0"></Label>
+                            <Label Text="Valor" Grid.Column="1" HorizontalTextAlignment="Center"></Label>
+                            <Label Text="Hora" Grid.Column="2" HorizontalTextAlignment="End"></Label>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+                    
+                </CollectionView>
+                    
         </Grid>
     </Grid>
 
