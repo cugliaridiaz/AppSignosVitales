@@ -2,87 +2,74 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MVPParteSofi.MVVM.View.HistorialFrecuencia"
+             xmlns:local="clr-namespace:MVPParteSofi.MVVM.ViewModels"
              Title="HistorialFrecuencia"
              xmlns:chart="clr-namespace:Syncfusion.Maui.Charts;assembly=Syncfusion.Maui.Charts"
-             NavigationPage.HasNavigationBar="False">
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="Lavender">
 
     <!--Agg gráficos a la página: xmlns:chart="clr-namespace:Syncfusion.Maui.Charts;assembly=Syncfusion.Maui.Charts"-->
     
-    <Grid RowDefinitions=".7*,.5*"
+    <Grid RowDefinitions=".20*,.70*,.10*"
           Margin="10"
-          BackgroundColor="AliceBlue">
-        <!--chart-->
-        <Grid Grid.Row="0"
-              RowDefinitions=".15*,.85*" >
-            <VerticalStackLayout Grid.Row="0">
-                <Label Text="Historial de Frecuencia Cardíaca"
+          BackgroundColor="Transparent">
+        
+        <VerticalStackLayout Grid.Row="0" BackgroundColor="Transparent">
+            <Label Text="Historial de Frecuencia Cardíaca"
                        FontSize="20"
                        HorizontalTextAlignment="Center"
-                       Margin="0,20,0,0"></Label>
-            </VerticalStackLayout>
-            <Frame BackgroundColor="White" Grid.Row="1" CornerRadius="15" >
-                <chart:SfCartesianChart Margin="5,0,15,5">
-                <chart:SfCartesianChart.XAxes>
-                    <chart:CategoryAxis />
-                </chart:SfCartesianChart.XAxes>
-
-                <chart:SfCartesianChart.YAxes>
-                    <chart:NumericalAxis />
-                </chart:SfCartesianChart.YAxes>
-
-                <chart:SplineSeries ItemsSource="{Binding Summary}" 
-                                    XBindingPath="ShownDate" 
-                                    YBindingPath="ValorFrecuencia"/>
-            </chart:SfCartesianChart>
-            </Frame>
-        </Grid>
-        <!--filtro y datos-->
-        <Grid
-                Grid.Row ="1"
-                RowDefinitions=".3*,.9*"
-                BackgroundColor="AntiqueWhite">
-            <VerticalStackLayout
-                    Grid.Row="0"
-                    BackgroundColor="Transparent">
-                    <Label Text="Filtrar resultados"
-                           FontSize="15"
-                           Margin="10,0,0,0"></Label>
-                <HorizontalStackLayout
-                        HorizontalOptions="CenterAndExpand"
-                        Grid.Row="0">
-                    <DatePicker FontSize="17"
+                       Margin="0,40,0,0"
+                       FontAttributes="Bold"></Label>
+            <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
+                <Label Text="Filtrar resultados:"
+                           FontSize="17"
+                           Margin="10,20,0,0"></Label>
+                <DatePicker FontSize="17"
                                 Margin="10"
                                 BackgroundColor="White">
-                    </DatePicker>
-                    <TimePicker FontSize="17"
-                                Margin="10">
-                    </TimePicker>
-                </HorizontalStackLayout>
+                </DatePicker>
+            </HorizontalStackLayout>
 
-                </VerticalStackLayout>
+        </VerticalStackLayout>
+        <!--filtro y datos-->
+        
                 <CollectionView Grid.Row="1"
                                 EmptyView="No se encontraron datos"
-                                BackgroundColor="LightGrey"
-                                ItemsSource="{Binding ValorFrecuencia}">
+                                BackgroundColor="White"
+                                ItemsSource="{Binding Frecuencias}">
                     
                     <CollectionView.ItemsLayout>
-                        <LinearItemsLayout ItemSpacing="15"
+                        <LinearItemsLayout ItemSpacing="0"
                                            Orientation="Vertical"></LinearItemsLayout>
                     </CollectionView.ItemsLayout>
-                
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <Grid ColumnDefinitions="*,*,*">
-                            <Label Text="Día" Grid.Column="0"></Label>
-                            <Label Text="Valor" Grid.Column="1" HorizontalTextAlignment="Center"></Label>
-                            <Label Text="Hora" Grid.Column="2" HorizontalTextAlignment="End"></Label>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <SwipeView>
+                        <SwipeView.LeftItems>
+                            <SwipeItems>
+                                <SwipeItem
+                                    BackgroundColor="CornflowerBlue"
+                                    Command="{Binding DeleteCommand}"
+                                    CommandParameter="{Binding Source={RelativeSource AncestorType={x:Type local:HistorialFrecuenciaViewModel}}, Path=DeleteCommand}"
+                                    Text="DELETE" />
+                            </SwipeItems>
+                        </SwipeView.LeftItems>
+                        <Grid ColumnDefinitions="7*,3*" Margin="20">
+                            <Label Text="{Binding DiaFrecuencia}" Grid.Column="0" 
+                               FontSize="20" ></Label>
+                            <Label Text="{Binding ValorFrecuencia}" Grid.Column="1" HorizontalTextAlignment="End" 
+                               FontSize="20"></Label>
                         </Grid>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-                    
-                </CollectionView>
-                    
-        </Grid>
+                    </SwipeView>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <Button Text="Volver" Grid.Row="2" 
+                FontSize="15" Margin="10" 
+                HorizontalOptions="Center" 
+                BackgroundColor="Transparent"
+                TextColor="Navy"></Button>
+                
     </Grid>
 
 </ContentPage>

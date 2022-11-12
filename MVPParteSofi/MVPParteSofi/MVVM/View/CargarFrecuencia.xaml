@@ -61,7 +61,7 @@
                     TextColor="Blue"
                     FontSize="13"
                     HeightRequest="50"
-                    Text="{Binding FrecuenciaData.ValorFrecuencia}"
+                    Text="{Binding ValorFrecuencia}"
                     />
                 </Frame>
                 <Frame
@@ -111,7 +111,7 @@
                             FontSize="Header"
                             HorizontalOptions="Center"
                             VerticalOptions="Center"
-                            Date="{Binding FrecuenciaData.DiaFrecuencia}"/>
+                            Date="{Binding DiaFrecuencia}"/>
                 <TimePicker HorizontalOptions="Center"
                             VerticalOptions="Center"
                             AbsoluteLayout.LayoutBounds=".73,1,80,40"
@@ -206,33 +206,7 @@
                     Y2="0"
                     Stroke="lightgray"
                     />
-                <!-- Notificaciones -->
-                <AbsoluteLayout>
-                    <Label 
-                    Text="Configuración de notificaciones"
-                    BackgroundColor="Transparent"
-                    AbsoluteLayout.LayoutBounds="0,0,1,60"
-                    AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"
-                    HorizontalTextAlignment="Center"
-                    VerticalTextAlignment="Center"
-                    FontSize="15"
-                    TextColor="Black"
-                    ></Label>
-                    <Button
-                    BackgroundColor="Transparent"
-                    BorderColor="Transparent"
-                    Clicked="FrecuenciaPrueba"
-                    AbsoluteLayout.LayoutBounds="0,0,1,60"
-                    AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"
-                        />
-                </AbsoluteLayout>
-                <Line 
-                    X1="50"
-                    Y1="0"
-                    X2="600"
-                    Y2="0"
-                    Stroke="lightgray"
-                    />
+                
                 <AbsoluteLayout>
                     <!-- Bluetooth -->
                     <Label 

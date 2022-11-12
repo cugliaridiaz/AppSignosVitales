@@ -1,1 +1,1 @@
-C:\Users\usuario-pc\Desktop\MVPParteSofi-20221031T235942Z-001\MVPParteSofi\MVPParteSofi\MVPParteSofi.csproj;x64
+C:\Users\54112\Source\Repos\AppSignosVitales\MVPParteSofi\MVPParteSofi\MVPParteSofi.csproj;x64

@@ -18,7 +18,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyProductAttribute("MVPParteSofi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MVPParteSofi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
-[assembly: System.Runtime.Versioning.TargetPlatformAttribute("iOS16.0")]
+[assembly: System.Runtime.Versioning.TargetPlatformAttribute("iOS15.4")]
 [assembly: System.Runtime.Versioning.SupportedOSPlatformAttribute("iOS14.2")]
 
 // Generado por la clase WriteCodeFragment de MSBuild.

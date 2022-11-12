@@ -1,43 +1,54 @@
 ﻿using MVPParteSofi.MVVM.Models;
+using PropertyChanged;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
+using Bogus;
 
 namespace MVPParteSofi.MVVM.ViewModels
 {
-    
+    [AddINotifyPropertyChangedInterface]
+
     public class HistorialFrecuenciaViewModel
     {
-        public ObservableCollection<FrecuenciaSummary> Summary { get; set; }
-        public ObservableCollection<FrecuenciaData> AnormalesList { get; set; } //declaro valores anormales
-        public void GetFrecuenciaSummary()
+
+        public List<FrecuenciaData> Valores { get; set; }
+        public FrecuenciaData CurrentValor { get; set; }
+        public ObservableCollection<FrecuenciaData> Frecuencias { get; set; }
+        public ICommand DeleteCommand { get; set; }
+
+        
+        public HistorialFrecuenciaViewModel()
         {
-            var data =
-                App.FrecuenciaRepo.GetItems();
-            var result = 
-                new List<FrecuenciaSummary>();
-            var groupedFrecuencias =
-                data.GroupBy(t => t.DiaFrecuencia.Date); //declaro orden por fecha
-
-            foreach(var group in groupedFrecuencias)
+            DeleteCommand = new Command(() =>
             {
-                var frecuenciaSummary = new FrecuenciaSummary
-                {
-                    DiaFrecuencia = group.Key,
-                    ShownDate = group.Key.ToString("MM/dd")
-                };
-                result.Add(frecuenciaSummary);
-            }
-            result = result.OrderBy(x => x.DiaFrecuencia).ToList(); //orden por fecha
+                App.FrecuenciaRepo.DeleteItem(CurrentValor);
+                Refresh();
+            });
 
-            Summary = new ObservableCollection<FrecuenciaSummary>(result);
-
-            var anormalList = data.Where(x => x.ValorFrecuencia < 60 && x.ValorFrecuencia > 100); //valores anormales fuera de 60 y 100
-            AnormalesList = new ObservableCollection<FrecuenciaData>(anormalList);
+            FillData();
         }
 
+        public void FillData()
+        {
+            var valores =
+                 App.FrecuenciaRepo.GetItems();
+            valores =
+                 valores.OrderByDescending(x => x.DiaFrecuencia).ToList();
+
+            Frecuencias = new ObservableCollection<FrecuenciaData>(valores);
+        }
+        
+         private void Refresh()
+        {
+            Valores = App.FrecuenciaRepo.GetItemsWithChildren();
+        }
     }
+    
 }
+
+

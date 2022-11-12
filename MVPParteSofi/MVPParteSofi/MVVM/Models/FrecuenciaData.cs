@@ -11,6 +11,5 @@ namespace MVPParteSofi.MVVM.Models
     {
         public int ValorFrecuencia { get; set; }
         public DateTime DiaFrecuencia { get; set; }
-        //public TimeOnly HoraFrecuencia { get; set; }
     }
 }
