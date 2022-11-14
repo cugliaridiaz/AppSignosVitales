@@ -9,7 +9,6 @@ namespace MVPParteSofi.MVVM.Models
     public class FrecuenciaSummary
     {
         public DateTime DiaFrecuencia { get; set; }
-        public string ShownDate { get; set; }
         public int Valor { get; set; }
     }
 }

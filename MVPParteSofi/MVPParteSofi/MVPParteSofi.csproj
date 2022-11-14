@@ -49,6 +49,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Remove="MVVM\Models\FrecuenciaSummary.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <MauiImage Remove="Resources\Images\historial.png" />
 	  <MauiImage Remove="Resources\Images\inicio.png" />
 	  <MauiImage Remove="Resources\Images\perfil.png" />
@@ -71,6 +75,9 @@
 
 	<ItemGroup>
 	  <MauiXaml Update="MVVM\View\HistorialFrecuencia.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="MVVM\View\NewFolder\ExplorProf.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="PacienteHistorial.xaml">

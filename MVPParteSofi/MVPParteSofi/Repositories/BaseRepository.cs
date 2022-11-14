@@ -27,12 +27,12 @@ namespace MVPParteSofi.Repositories
                connection.CreateTable<T>();
           }
 
-          public void DeleteItem(T item)
+          public void DeleteItem(T CurrentValor)
           {
                try
                {
                     //connection.Delete(item);
-                    connection.Delete(item, true);
+                    connection.Delete(CurrentValor, true);
                }
                catch (Exception ex)
                {
@@ -110,19 +110,10 @@ namespace MVPParteSofi.Repositories
                int result = 0;
                try
                {
-                    if (item.Id != 0)
-                    {
-                         result =
-                              connection.Update(item);
-                         StatusMessage =
-                              $"{result} row(s) updated";
-                    }
-                    else
-                    {
                          result = connection.Insert(item);
                          StatusMessage =
                               $"{result} row(s) added";
-                    }
+                    
 
                }
                catch (Exception ex)

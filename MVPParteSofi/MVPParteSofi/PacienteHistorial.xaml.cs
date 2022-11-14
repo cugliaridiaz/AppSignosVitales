@@ -1,3 +1,5 @@
+using MVPParteSofi.MVVM.View;
+
 namespace MVPParteSofi;
 
 public partial class PacienteHistorial : ContentPage
@@ -8,7 +10,7 @@ public partial class PacienteHistorial : ContentPage
 	}
     private void historial_fcardiaca(object sender, EventArgs e)
     {
-        Navigation.PushAsync(new Prueba());
+        Navigation.PushAsync(new HistorialFrecuencia());
     }
     private void historial_glucemia(object sender, EventArgs e)
     {

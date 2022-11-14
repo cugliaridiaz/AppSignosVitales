@@ -15,11 +15,8 @@ public partial class CargarFrecuencia : ContentPage
 	{
         var currentVM =
             (CargarFrecuenciaViewModel)BindingContext;
-        var message =
-            currentVM.GuardarFrecuencia();
-        var Entry =
-            currentVM.FrecuenciaData.ValorFrecuencia;
-        await DisplayAlert("Su valor ha sido registrado", "{Entry} latidos/min.", "Aceptar", "Volver");
+        currentVM.GuardarFrecuencia();
+        await Navigation.PushAsync(new CargarFrecuencia());
 	}
 	  private async void FrecuenciaPrueba (object sender, EventArgs e)
     {

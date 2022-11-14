@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Bogus;
+using Android.OS;
 
 namespace MVPParteSofi.MVVM.ViewModels
 {
@@ -16,21 +17,19 @@ namespace MVPParteSofi.MVVM.ViewModels
     public class HistorialFrecuenciaViewModel
     {
 
-        public List<FrecuenciaData> Valores { get; set; }
-        public FrecuenciaData CurrentValor { get; set; }
-        public ObservableCollection<FrecuenciaData> Frecuencias { get; set; }
-        public ICommand DeleteCommand { get; set; }
+        public FrecuenciaData CurrentValor { get; set; } = new FrecuenciaData
+        {
+            DiaFrecuencia = DateTime.UtcNow.ToLocalTime(),
+
+        };
+        public List<FrecuenciaData> Frecuencias { get; set; }
+
 
         
         public HistorialFrecuenciaViewModel()
         {
-            DeleteCommand = new Command(() =>
-            {
-                App.FrecuenciaRepo.DeleteItem(CurrentValor);
-                Refresh();
-            });
-
             FillData();
+            DeleteCommand();
         }
 
         public void FillData()
@@ -40,13 +39,15 @@ namespace MVPParteSofi.MVVM.ViewModels
             valores =
                  valores.OrderByDescending(x => x.DiaFrecuencia).ToList();
 
-            Frecuencias = new ObservableCollection<FrecuenciaData>(valores);
+            Frecuencias = new List<FrecuenciaData>(valores);
         }
-        
-         private void Refresh()
+
+        public async void DeleteCommand()
         {
-            Valores = App.FrecuenciaRepo.GetItemsWithChildren();
+            App.FrecuenciaRepo.DeleteItem(CurrentValor);
+            FillData();
         }
+
     }
     
 }

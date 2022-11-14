@@ -6,11 +6,30 @@
              Title="HistorialFrecuencia"
              xmlns:chart="clr-namespace:Syncfusion.Maui.Charts;assembly=Syncfusion.Maui.Charts"
              NavigationPage.HasNavigationBar="False"
-             BackgroundColor="Lavender">
+             BackgroundColor="Lavender"
+             >
 
     <!--Agg gráficos a la página: xmlns:chart="clr-namespace:Syncfusion.Maui.Charts;assembly=Syncfusion.Maui.Charts"-->
-    
-    <Grid RowDefinitions=".20*,.70*,.10*"
+
+    <ContentPage.Resources>
+        <Style TargetType="Grid">
+            <Setter Property="VisualStateManager.VisualStateGroups">
+                <VisualStateGroupList>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal" />
+                        <VisualState x:Name="Selected">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor"
+                                        Value="WhiteSmoke" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </Setter>
+        </Style>
+    </ContentPage.Resources>
+
+    <Grid RowDefinitions=".12*,.70*,.10*"
           Margin="10"
           BackgroundColor="Transparent">
         
@@ -20,7 +39,7 @@
                        HorizontalTextAlignment="Center"
                        Margin="0,40,0,0"
                        FontAttributes="Bold"></Label>
-            <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
+            <!--<HorizontalStackLayout HorizontalOptions="CenterAndExpand">
                 <Label Text="Filtrar resultados:"
                            FontSize="17"
                            Margin="10,20,0,0"></Label>
@@ -28,48 +47,63 @@
                                 Margin="10"
                                 BackgroundColor="White">
                 </DatePicker>
-            </HorizontalStackLayout>
+            </HorizontalStackLayout>-->
 
         </VerticalStackLayout>
         <!--filtro y datos-->
-        
-                <CollectionView Grid.Row="1"
+        <Frame CornerRadius="10"
+               BackgroundColor="White"
+               Grid.Row="1"
+               Padding="0">
+
+            <CollectionView 
                                 EmptyView="No se encontraron datos"
-                                BackgroundColor="White"
-                                ItemsSource="{Binding Frecuencias}">
+                                BackgroundColor="Transparent"
+                                ItemsSource="{Binding Frecuencias}"
+                                SelectedItem="{Binding CurrentValor}"
+                                SelectionMode="Single"
+                                >
                     
                     <CollectionView.ItemsLayout>
                         <LinearItemsLayout ItemSpacing="0"
                                            Orientation="Vertical"></LinearItemsLayout>
                     </CollectionView.ItemsLayout>
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
-                    <SwipeView>
-                        <SwipeView.LeftItems>
-                            <SwipeItems>
-                                <SwipeItem
-                                    BackgroundColor="CornflowerBlue"
-                                    Command="{Binding DeleteCommand}"
-                                    CommandParameter="{Binding Source={RelativeSource AncestorType={x:Type local:HistorialFrecuenciaViewModel}}, Path=DeleteCommand}"
-                                    Text="DELETE" />
-                            </SwipeItems>
-                        </SwipeView.LeftItems>
-                        <Grid ColumnDefinitions="7*,3*" Margin="20">
-                            <Label Text="{Binding DiaFrecuencia}" Grid.Column="0" 
-                               FontSize="20" ></Label>
-                            <Label Text="{Binding ValorFrecuencia}" Grid.Column="1" HorizontalTextAlignment="End" 
-                               FontSize="20"></Label>
-                        </Grid>
-                    </SwipeView>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                                <Grid ColumnDefinitions="7*,1*,2*,1.5*" RowDefinitions="*,*" Margin="20">
+                                    <Label Text="{Binding DiaFrecuencia}" Grid.Column="0" Grid.RowSpan="2"
+                                       FontSize="17" 
+                                           VerticalTextAlignment="Center"></Label>
+                                    <Label Text="{Binding ValorFrecuencia}" Grid.Column="1" Grid.RowSpan="2" HorizontalTextAlignment="End" 
+                                       FontSize="17"
+                                           FontAttributes="Bold"
+                                           VerticalTextAlignment="Center"></Label>
+                                    <Label Text="latidos/" Grid.Column="2" Grid.Row="0"
+                                           FontSize="12"
+                                           HorizontalTextAlignment="Start"
+                                           Margin="8,0,0,0"></Label>
+                                    <Label Text="minuto" Grid.Column="2" Grid.Row="1"
+                                           FontSize="12"
+                                           HorizontalTextAlignment="Start"
+                                           Margin="8,0,0,0"></Label>
+                                    <ImageButton Source="delete.png"
+                                            Grid.Column="3" Grid.RowSpan="2"
+                                            Clicked="DeleteCommand"
+                                                 HeightRequest="20"
+                                                 WidthRequest="20"
+                                                 HorizontalOptions="End"></ImageButton>
+                                </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+        </Frame>
+
         <Button Text="Volver" Grid.Row="2" 
                 FontSize="15" Margin="10" 
                 HorizontalOptions="Center" 
                 BackgroundColor="Transparent"
-                TextColor="Navy"></Button>
+                TextColor="Navy"
+                Clicked="VolverHistorial"></Button>
                 
     </Grid>
-
 </ContentPage>

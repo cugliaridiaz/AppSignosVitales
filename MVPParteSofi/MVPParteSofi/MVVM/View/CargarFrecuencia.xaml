@@ -61,7 +61,7 @@
                     TextColor="Blue"
                     FontSize="13"
                     HeightRequest="50"
-                    Text="{Binding ValorFrecuencia}"
+                    Text="{Binding FrecuenciaData_.ValorFrecuencia}"
                     />
                 </Frame>
                 <Frame
@@ -111,14 +111,7 @@
                             FontSize="Header"
                             HorizontalOptions="Center"
                             VerticalOptions="Center"
-                            Date="{Binding DiaFrecuencia}"/>
-                <TimePicker HorizontalOptions="Center"
-                            VerticalOptions="Center"
-                            AbsoluteLayout.LayoutBounds=".73,1,80,40"
-                            AbsoluteLayout.LayoutFlags="PositionProportional"
-                            BackgroundColor="Transparent"
-                            TextColor="Black"
-                            />
+                            Date="{Binding FrecuenciaData_.DiaFrecuencia}"/>
             </AbsoluteLayout>
             <!-- GUARDAR -->
             <VerticalStackLayout>

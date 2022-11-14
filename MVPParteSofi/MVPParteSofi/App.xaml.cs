@@ -1,5 +1,6 @@
 ﻿using MVPParteSofi.MVVM.Models;
 using MVPParteSofi.MVVM.View;
+using MVPParteSofi.MVVM.View.NewFolder;
 using MVPParteSofi.Repositories;
 
 namespace MVPParteSofi;
@@ -14,6 +15,6 @@ public partial class App : Application
 
 		FrecuenciaRepo = _frecuenciaRepo;
 
-        MainPage = new NavigationPage(new CargarFrecuencia()); //cambiar la main page -- MainPage = new NavigationPage (new PacienteHome());
+        MainPage = new NavigationPage(new ExplorProf()); //cambiar la main page -- MainPage = new NavigationPage (new PacienteHome());
     }
 }
