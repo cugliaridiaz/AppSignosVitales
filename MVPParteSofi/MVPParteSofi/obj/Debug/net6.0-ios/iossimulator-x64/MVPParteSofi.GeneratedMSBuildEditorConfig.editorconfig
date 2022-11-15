@@ -40,11 +40,17 @@ build_metadata.AdditionalFiles.ManifestResourceName = MVPParteSofi.MVVM.View.His
 build_metadata.AdditionalFiles.TargetPath = MVVM\View\HistorialFrecuencia.xaml
 build_metadata.AdditionalFiles.RelativePath = MVVM\View\HistorialFrecuencia.xaml
 
-[C:/Users/usuario-pc/source/repos/AppSignosVitales/MVPParteSofi/MVPParteSofi/MVVM/View/NewFolder/ExplorProf.xaml]
+[C:/Users/usuario-pc/source/repos/AppSignosVitales/MVPParteSofi/MVPParteSofi/MVVM/View/Prof/ExplorProf.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = MVPParteSofi.MVVM.View.NewFolder.ExplorProf.xaml
-build_metadata.AdditionalFiles.TargetPath = MVVM\View\NewFolder\ExplorProf.xaml
-build_metadata.AdditionalFiles.RelativePath = MVVM\View\NewFolder\ExplorProf.xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MVPParteSofi.MVVM.View.Prof.ExplorProf.xaml
+build_metadata.AdditionalFiles.TargetPath = MVVM\View\Prof\ExplorProf.xaml
+build_metadata.AdditionalFiles.RelativePath = MVVM\View\Prof\ExplorProf.xaml
+
+[C:/Users/usuario-pc/source/repos/AppSignosVitales/MVPParteSofi/MVPParteSofi/MVVM/View/Prof/PacienteDetail.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MVPParteSofi.MVVM.View.Prof.PacienteDetail.xaml
+build_metadata.AdditionalFiles.TargetPath = MVVM\View\Prof\PacienteDetail.xaml
+build_metadata.AdditionalFiles.RelativePath = MVVM\View\Prof\PacienteDetail.xaml
 
 [C:/Users/usuario-pc/source/repos/AppSignosVitales/MVPParteSofi/MVPParteSofi/PacienteHistorial.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml

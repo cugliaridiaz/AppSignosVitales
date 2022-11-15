@@ -14,7 +14,10 @@
     <MauiXaml Update="MVVM\View\HistorialFrecuencia.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
-    <MauiXaml Update="MVVM\View\NewFolder\ExplorProf.xaml">
+    <MauiXaml Update="MVVM\View\Prof\ExplorProf.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
+    <MauiXaml Update="MVVM\View\Prof\PacienteDetail.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
     <MauiXaml Update="PacienteHistorial.xaml">
